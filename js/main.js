@@ -12,9 +12,12 @@
 
     if (!hamburger || !mobileMenu) return;
 
+    var nav = document.querySelector('.nav');
+
     hamburger.addEventListener('click', function () {
       var isOpen = hamburger.classList.toggle('nav__hamburger--open');
       mobileMenu.classList.toggle('nav__mobile-menu--open', isOpen);
+      if (nav) nav.classList.toggle('nav--menu-open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
       hamburger.setAttribute('aria-expanded', isOpen);
     });
@@ -24,6 +27,7 @@
       link.addEventListener('click', function () {
         hamburger.classList.remove('nav__hamburger--open');
         mobileMenu.classList.remove('nav__mobile-menu--open');
+        if (nav) nav.classList.remove('nav--menu-open');
         document.body.style.overflow = '';
         hamburger.setAttribute('aria-expanded', 'false');
       });
