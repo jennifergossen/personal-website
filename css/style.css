@@ -3,6 +3,50 @@
    Design System & Styles
    ============================================ */
 
+/* ---------- Self-hosted Fonts ---------- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/libre-baskerville-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/libre-baskerville-latin.woff2') format('woff2');
+}
+
 /* ---------- CSS Custom Properties ---------- */
 :root {
   /* Colors */
@@ -492,6 +536,21 @@ main {
 }
 
 .footer__bottom a:hover {
+  color: #fff;
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.footer__legal a:hover {
   color: #fff;
 }
 
@@ -1803,6 +1862,44 @@ main {
   flex-shrink: 0;
 }
 
+/* ---------- Legal Pages (Impressum, Privacy Policy) ---------- */
+.legal-page {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+.legal-page h1 {
+  margin-bottom: var(--space-2xl);
+}
+
+.legal-page h2 {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.legal-page ul {
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.legal-page a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.legal-page a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -1958,6 +2055,10 @@ main {
     flex-direction: column;
     gap: var(--space-md);
     text-align: center;
+  }
+
+  .footer__legal {
+    justify-content: center;
   }
 
   /* Contact */
